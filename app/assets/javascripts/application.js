@@ -28,7 +28,7 @@ function mapBuilder() {
 
     // handler.getMap() is the google map object
     // you can also access it with handler.map.getServiceObject()
-    handler.getMap().setZoom(19);
+    handler.getMap().setZoom(12);
   });
 }
 
