@@ -1,0 +1,48 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+body {
+  margin-top :60px
+}
+
+.img-footer {
+  max-width: 2em;
+  max-height: 2em;
+  margin-right: .5em;
+}
+
+footer {
+  padding: 1em 0;
+  padding-top: 1em;
+  padding-right: 0px;
+  padding-bottom: 1em;
+  padding-left: 0px;
+  margin-top: 1em;
+  border-top: 1px solid #ccc;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: rgb(204, 204, 204);
+}
+
+.btn-primary {
+  background-image: -webkit-linear-gradient(top, #337ab7 0%, #265a88 100%);
+  background-image: linear-gradient(to bottom, #337ab7 0%, #265a88 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF337AB7', endColorstr='#FF265A88', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  background-repeat: repeat-x;
+  border-color: #245580;
+}
+
+.btn-default {
+  background-image: -webkit-linear-gradient(top, #fff 0%, #e0e0e0 100%);
+  background-image: linear-gradient(to bottom, #fff 0%, #e0e0e0 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFE0E0E0', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  background-repeat: repeat-x;
+  border-color: #dbdbdb;
+  text-shadow: 0 1px 0 #fff;
+  border-color: #ccc;
+}

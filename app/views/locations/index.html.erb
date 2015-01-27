@@ -1,0 +1,38 @@
+<% if notice != nil %>
+<p id="notice">
+  <div class="alert alert-danger text-centered" role="alert">
+    <p class="text-center"><%= notice %></p>
+  </div>
+</p>
+<% end %>
+
+<div class="page-header">
+  <div class="pull-right">
+    <a class="btn btn-info" <%= link_to 'New Location', new_location_path %></a>
+  </div>
+  <h1>Locations</h1>
+</div>
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Names:</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @locations.each do |location| %>
+    <tr>
+      <td><%= link_to "#{location.name}", location %></td>
+      <td class="text-right">
+        <a class="btn btn-info" <%= link_to 'Edit', edit_location_path(location) %>
+          <a class="btn btn-danger" <%= link_to 'Delete', location, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+
+<br>

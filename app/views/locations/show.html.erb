@@ -1,0 +1,60 @@
+<% if notice != nil %>
+<p id="notice">
+  <div class="alert alert-success text-centered" role="alert">
+    <p class="text-center"><%= notice %></p>
+  </div>
+</p>
+<% end %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @location.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @location.address %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @location.longitude %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @location.latitude %>
+</p>
+
+<p>
+  <strong>Gmaps:</strong>
+  <%= @location.gmaps %>
+</p>
+
+<p>
+  <strong>Hstart:</strong>
+  <%= @location.hstart %>
+</p>
+
+<p>
+  <strong>Hend:</strong>
+  <%= @location.hend %>
+</p>
+
+<p>
+  <strong>Hmenu:</strong>
+  <%= @location.hmenu %>
+</p>
+
+<p>
+  <strong>Hrating:</strong>
+  <%= @location.hrating %>
+</p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @location.number %>
+</p>
+
+<%= link_to 'Edit', edit_location_path(@location) %> |
+<%= link_to 'Back', locations_path %>
