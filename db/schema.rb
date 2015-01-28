@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150127234708) do
+ActiveRecord::Schema.define(version: 20150128002242) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,9 +27,16 @@ ActiveRecord::Schema.define(version: 20150127234708) do
     t.string   "hmenu"
     t.float    "hrating"
     t.string   "number"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.string   "days"
+    t.boolean  "sunday",     default: false
+    t.boolean  "monday",     default: false
+    t.boolean  "tuesday",    default: false
+    t.boolean  "wednesday",  default: false
+    t.boolean  "thursday",   default: false
+    t.boolean  "friday",     default: false
+    t.boolean  "saturday",   default: false
   end
 
 end
