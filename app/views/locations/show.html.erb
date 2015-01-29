@@ -6,6 +6,12 @@
 </p>
 <% end %>
 
+<ul class="breadcrumb">
+  <li><%= link_to "Locations", locations_path %></li>
+  <li><%= link_to "#{@location.name}", @location %></li>
+  <li class="active">New Location</li>
+</ul>
+
 <p>
   <strong>Name:</strong>
   <%= @location.name %>
@@ -61,5 +67,6 @@
   <%= @location.number %>
 </p>
 
-<%= link_to 'Edit', edit_location_path(@location) %> |
-<%= link_to 'Back', locations_path %>
+<p>
+    <a class="btn btn-primary" <%= link_to 'Go Back', locations_path %>
+</p>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150129184048) do
+ActiveRecord::Schema.define(version: 20150129201358) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20150129184048) do
     t.float    "hstart"
     t.float    "hend"
     t.string   "hmenu"
-    t.float    "hrating"
+    t.float    "hrating",    default: 0.0
     t.string   "number"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
