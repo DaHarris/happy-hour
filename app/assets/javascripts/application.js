@@ -12,11 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
 //= require underscore
 //= require gmaps/google
 //= requre ./gmaps4rails/googlemaps.js
+
 
 function mapBuilder() {
   handler = Gmaps.build('Google');
@@ -30,11 +30,39 @@ function mapBuilder() {
     // you can also access it with handler.map.getServiceObject()
     handler.getMap().setZoom(12);
   });
+
 }
 
-function placeMarker(lats, longs) {
+function placeMarker(lats, longs, name, start, end, rating) {
     var marker = new google.maps.Marker({
     position: {lat: lats, lng: longs},
+    icon: eval(rating),
     map: handler.getMap()
   });
+
+  var contentString = name + '<br>HappyHour start: ' + start + '<br>HappyHour end: ' + end;
+
+  var infowindow = new google.maps.InfoWindow({
+    content: contentString
+  });
+
+  google.maps.event.addListener(marker, 'click', function() {
+    infowindow.open(handler.getMap(), marker);
+  });
 }
+
+var iconBase = '/assets/';
+var icons = {
+  unrated: {
+    icon: iconBase + 'Circle_Grey.png'
+  },
+  great: {
+    icon: iconBase + 'Circle_Green.png'
+  },
+  average: {
+    icon: iconBase + 'Circle_Yellow.png'
+  },
+  bad: {
+    icon: iconBase + 'Circle_Red.png'
+  }
+};

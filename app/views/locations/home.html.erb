@@ -24,8 +24,10 @@
       mapBuilder();
     </script>
     <% @locations.each do |shit| %>
+      <% temp = shit.convert %>
       <script type="text/javascript">
-        placeMarker(<%=shit.latitude %>, <%=shit.longitude %>);
+        placeMarker(<%=shit.latitude %>, <%=shit.longitude %>, "<%=shit.name%>",
+        "<%=shit.hstart%>", "<%=shit.hend%>", "<%=temp%>");
       </script>
     <% end %>
   </div>

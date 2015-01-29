@@ -11,6 +11,9 @@ Rails.application.routes.draw do
 
   get 'index' => 'locations#home'
   get 'about' => 'locations#about'
+  get 'locations/:id/rate' => 'locations#rate', :as => :rate_location
+
+  # get 'rate_index' => 'locations#rate_index'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

@@ -1,5 +1,5 @@
 class LocationsController < ApplicationController
-  before_action :set_location, only: [:show, :edit, :update, :destroy]
+  before_action :set_location, only: [:show, :edit, :update, :destroy, :rate]
 
   # GET /locations
   # GET /locations.json
@@ -29,6 +29,14 @@ class LocationsController < ApplicationController
     @days.each do |this|
       this = false
     end
+
+  end
+  #
+  # def rate_index
+  #   @locations = Location.all
+  # end
+
+  def rate
   end
 
   # GET /locations/1/edit
@@ -55,6 +63,11 @@ class LocationsController < ApplicationController
   # PATCH/PUT /locations/1.json
   def update
     respond_to do |format|
+      if @location.update(rate_params)
+        temp = @location.hcounter
+        temp += 1
+        @location.hcounter = temp
+      end
       if @location.update(location_params)
         format.html { redirect_to @location, notice: 'Location was successfully updated.' }
         format.json { render :show, status: :ok, location: @location }
@@ -83,6 +96,10 @@ class LocationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def location_params
-      params.require(:location).permit(:name, :address, :longitude, :latitude, :gmaps, :hstart, :hend, :hmenu, :hrating, :number, :days, :sunday, :monday, :tuesday, :wednesday, :thursday, :friday, :saturday)
+      params.require(:location).permit(:name, :address, :longitude, :latitude, :gmaps, :hstart, :hend, :hmenu, :hrating, :number, :days, :sunday, :monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :hrating, :hcounter)
+    end
+
+    def rate_params
+      params.require(:location).permit(:hrating)
     end
 end

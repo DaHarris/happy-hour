@@ -5,4 +5,19 @@ class Location < ActiveRecord::Base
     address
   end
 
+  #converts the rating to a string for referencing icons
+  #in application.js for the google maps marker
+  def convert()
+    if hrating == nil;
+      'icons.unrated.icon'
+    elsif hrating < 3.5
+      'icons.bad.icon'
+    elsif hrating < 4.25
+      'icons.average.icon'
+    else
+      'icons.great.icon'
+    end
+  end
+
+
 end
