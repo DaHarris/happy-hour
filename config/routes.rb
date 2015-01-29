@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   get 'index' => 'locations#home'
   get 'about' => 'locations#about'
+  get 'register' => 'locations#register'
   get 'locations/:id/rate' => 'locations#rate', :as => :rate_location
 
   # get 'rate_index' => 'locations#rate_index'

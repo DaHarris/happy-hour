@@ -47,6 +47,9 @@ class LocationsController < ApplicationController
   # POST /locations.json
   def create
     @location = Location.new(location_params)
+    @temp = Geocoder.search(@location.address)
+    @location.latitude = @temp[0].latitude
+    @location.longitude = @temp[0].longitude
 
     respond_to do |format|
       if @location.save
