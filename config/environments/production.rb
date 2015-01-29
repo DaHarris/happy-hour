@@ -79,7 +79,7 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  #asset pipeline fix?
-  config.assets.compress = true
+  -  config.assets.compile = false
+  +  config.assets.compile = true
 
 end
