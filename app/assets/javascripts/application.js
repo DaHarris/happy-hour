@@ -24,13 +24,12 @@ function mapBuilder() {
     // handler.map is the proxy object created by the gem,
     // where you can add your custom methods,
     // like centerOn
-    handler.map.centerOn([39.73374, -104.99276]);
+    handler.map.centerOn([Gmap.map.userLocation.lat(), Gmap.map.userLocation.lng()]);
 
     // handler.getMap() is the google map object
     // you can also access it with handler.map.getServiceObject()
-    handler.getMap().setZoom(12);
+    handler.getMap().setZoom(10);
   });
-
 }
 
 function placeMarker(lats, longs, name, start, end, rating) {
@@ -50,6 +49,13 @@ function placeMarker(lats, longs, name, start, end, rating) {
     infowindow.open(handler.getMap(), marker);
   });
 }
+
+function changeZoom() {
+  handler.getMap().centerOn(48.8582, 2.2945);
+}
+
+document.getElementById("clickMe").onclick = changeZoom();
+
 
 var iconBase = '/assets/';
 var icons = {
