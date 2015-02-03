@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to index_path, :notice => "Logged in!"
     else
-      flash[:notice] =  'You fucked up, we are laughing at you.'
+      flash[:notice] =  'Login unsuccessful.'
       redirect_to log_in_path
     end
   end

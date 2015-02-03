@@ -8,7 +8,6 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     @user.encrypt_password
-
     if @user.save
       flash[:notice] = 'User was successfully created.'
       redirect_to index_path
@@ -22,6 +21,10 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:user_name, :user_password)
+  end
+
+  def username_param
+    params.require(:user).permit(:user_name)
   end
 
 end
