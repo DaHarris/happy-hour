@@ -25,7 +25,7 @@
     <div class="form-group">
       <div class="col-md-offset-2 col-md-4">
         <% if @location.ratings.find_by_user_name(current_user.user_name) %>
-          <input class="btn btn-primary" name="commit" type="submit" value="Update rating">
+          <input class="btn btn-primary" name="commit" type="submit" value="Update location rating">
         <% else %>
           <input class="btn btn-primary" name="commit" type="submit" value="Create rating">
         <% end %>

@@ -1,11 +1,14 @@
 class RatingsController < ApplicationController
+  before_action :set_rating, only: [:show, :edit, :update, :destroy]
+
 
   def new
     @rating = Rating.new
     @location = Location.find(params[:location_id])
   end
 
-  def update
+  def edit
+    @location = Location.find(params[:location_id])
   end
 
   def create
@@ -30,7 +33,13 @@ class RatingsController < ApplicationController
       redirect_to index_path
     end
   end
-  
+
+  private
+
+  def set_rating
+    @rating = Rating.find(params[:id])
+  end
+
   def user_params
     params.require(:rating).permit(:rating_score)
   end

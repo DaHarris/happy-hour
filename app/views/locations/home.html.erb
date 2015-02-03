@@ -7,7 +7,7 @@
   </div>
 </p>
 <% end %>
-<!-- 
+<!--
     <div class="row">
       <div class="form-group">
         <div class="field">
@@ -33,11 +33,11 @@
       mapBuilder();
     </script>
     <% if @locations != nil %>
-      <% @locations.each do |shit| %>
-        <% temp = shit.convert %>
+      <% @locations.each do |each_location| %>
+        <% converted_ratings = each_location.convert %>
         <script type="text/javascript">
-          placeMarker(<%= shit.latitude %>, <%=shit.longitude %>, "<%= shit.name %>",
-          "<%=shit.hstart%>", "<%=shit.hend%>", "<%=temp%>");
+          placeMarker(<%= each_location.latitude %>, <%=each_location.longitude %>, "<%= each_location.name %>",
+          "<%=each_location.hstart%>", "<%=each_location.hend%>", "<%=converted_ratings%>");
         </script>
       <% end %>
     <% end %>

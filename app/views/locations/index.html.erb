@@ -8,7 +8,7 @@
 
 <div class="page-header">
   <div class="pull-right">
-    <a class="btn btn-info" <%= link_to 'New Location', new_location_path %></a>
+    <a class="btn btn-primary" <%= link_to 'New Location', new_location_path %></a>
   </div>
   <h1>Locations</h1>
 </div>
@@ -26,10 +26,12 @@
       <tr>
         <td><%= link_to "#{location.name}", location %></td>
         <td class="text-right">
-          <% if current_user %>
+          <% if current_user && location.ratings.find_by_user_name(current_user.user_name) %>
+            <a class="btn btn-info" <%= link_to 'Edit Rating', edit_location_rating_path(location, location.ratings.find_by_user_name(current_user.user_name)) %>
+          <% elsif current_user %>
             <a class="btn btn-info" <%= link_to 'Rate', new_location_rating_path(location) %>
           <% end %>
-          <a class="btn btn-info" <%= link_to 'Edit', edit_location_path(location) %>
+          <a class="btn btn-success" <%= link_to 'Edit', edit_location_path(location) %>
           <a class="btn btn-danger" <%= link_to 'Delete', location, method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
       </tr>
