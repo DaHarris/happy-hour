@@ -26,7 +26,9 @@
       <tr>
         <td><%= link_to "#{location.name}", location %></td>
         <td class="text-right">
-          <a class="btn btn-info" <%= link_to 'Rate', rate_location_path(location) %>
+          <% if current_user %>
+            <a class="btn btn-info" <%= link_to 'Rate', new_location_rating_path(location) %>
+          <% end %>
           <a class="btn btn-info" <%= link_to 'Edit', edit_location_path(location) %>
           <a class="btn btn-danger" <%= link_to 'Delete', location, method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>

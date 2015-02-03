@@ -36,9 +36,6 @@ class LocationsController < ApplicationController
   #   @locations = Location.all
   # end
 
-  def rate
-  end
-
   # GET /locations/1/edit
   def edit
   end
@@ -66,11 +63,7 @@ class LocationsController < ApplicationController
   # PATCH/PUT /locations/1.json
   def update
     respond_to do |format|
-      if @location.update(rate_params)
-        temp = @location.hcounter
-        temp += 1
-        @location.hcounter = temp
-      end
+
       if @location.update(location_params)
         format.html { redirect_to @location, notice: 'Location was successfully updated.' }
         format.json { render :show, status: :ok, location: @location }
@@ -102,7 +95,4 @@ class LocationsController < ApplicationController
       params.require(:location).permit(:name, :address, :longitude, :latitude, :gmaps, :hstart, :hend, :hmenu, :hrating, :number, :days, :sunday, :monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :hrating, :hcounter)
     end
 
-    def rate_params
-      params.require(:location).permit(:hrating)
-    end
 end

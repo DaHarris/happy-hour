@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :locations
+  resources :locations do
+    resources :ratings
+  end
+  resources :users
+  resources :sessions
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -11,8 +15,12 @@ Rails.application.routes.draw do
 
   get 'index' => 'locations#home'
   get 'about' => 'locations#about'
-  get 'register' => 'locations#register'
-  get 'locations/:id/rate' => 'locations#rate', :as => :rate_location
+  get 'register' => 'users#register'
+  get 'log_in' => 'sessions#new', :as => 'log_in'
+  get 'logout' => 'sessions#destroy'
+  
+
+
 
   # get 'rate_index' => 'locations#rate_index'
 

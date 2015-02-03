@@ -1,0 +1,33 @@
+<% if notice != nil %>
+<p id="notice">
+  <div class="alert alert-danger text-centered" role="alert">
+    <p class="text-center"><%= notice %></p>
+  </div>
+</p>
+<% end %>
+
+<%= form_tag sessions_path do %>
+  <div class="page-header">
+    <h1>Login</h1>
+  </div>
+  <div class="form-horizontal">
+    <div class="form-group">
+      <div class="field">
+        <div class="control-label col-md-2"><%= label_tag :user_name %><br></div>
+        <div class="form-ctonrols col-md-4"><%= text_field_tag :user_name, params[:user_name] %></div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="field">
+        <div class="control-label col-md-2"><%= label_tag :user_password %><br></div>
+        <div class="form-ctonrols col-md-4"><%= password_field_tag :user_password, params[:user_password] %></div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-offset-2 col-md-4">
+        <input class="btn btn-primary" name="commit" type="submit" value="Log in">
+        <a class="btn btn-default" <%= link_to 'Cancel', index_path %>
+        </div>
+      </div>
+    </div>
+<% end %>

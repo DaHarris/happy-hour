@@ -1,4 +1,5 @@
 class Location < ActiveRecord::Base
+  has_many :ratings
 
 
   def gmaps4rails_address

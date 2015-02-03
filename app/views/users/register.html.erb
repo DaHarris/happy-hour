@@ -1,0 +1,36 @@
+<%= form_for(@user) do |f| %>
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this location from being saved:</h2>
+
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+  <div class="page-header">
+    <h1>Register</h1>
+  </div>
+  <div class="form-horizontal">
+    <div class="form-group">
+      <div class="field">
+        <div class="control-label col-md-2"><%= f.label 'User Name' %><br></div>
+        <div class="form-ctonrols col-md-4"><%= f.text_field :user_name %></div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="field">
+        <div class="control-label col-md-2"><%= f.label 'Password' %><br></div>
+        <div class="form-ctonrols col-md-4"><%= f.password_field :user_password %></div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-offset-2 col-md-4">
+        <input class="btn btn-primary" name="commit" type="submit" value="Create User">
+        <a class="btn btn-default" <%= link_to 'Cancel', index_path %>
+      </div>
+    </div>
+  </div>
+<% end %>

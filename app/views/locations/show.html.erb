@@ -33,11 +33,6 @@
 </p>
 
 <p>
-  <strong>Gmaps:</strong>
-  <%= @location.gmaps %>
-</p>
-
-<p>
   <strong>Hstart:</strong>
   <%= @location.hstart %>
 </p>
@@ -53,19 +48,17 @@
 </p>
 
 <p>
-  <strong>Hrating:</strong>
-  <%= @location.hrating %>
-</p>
-
-<p>
   <strong>Rating Count:</strong>
   <%= @location.hcounter %>
 </p>
 
 <p>
-  <strong>Number:</strong>
-  <%= @location.number %>
+  <strong>Ratings:</strong>
+  <% @location.ratings.each do |x| %>
+    <%= x.rating_score %>
+  <% end %>
 </p>
+
 
 <p>
     <a class="btn btn-primary" <%= link_to 'Go Back', locations_path %>
