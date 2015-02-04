@@ -21,19 +21,21 @@
         <% if @locations != nil %>
           <% @locations.each do |each_location| %>
             <% converted_ratings = each_location.convert %>
+            <% converted_start = each_location.hstart.strftime("%H:%M") %>
+            <% converted_end = each_location.hend.strftime("%H:%M") %>
             <% if user_time %>
               <% if user_time > each_location.hstart.strftime("%H:%M") && user_time < each_location.hend.strftime("%H:%M") %>
                 <% if each_location.send(user_date) %>
                   <script type="text/javascript">
                     placeMarker(<%= each_location.latitude %>, <%=each_location.longitude %>, "<%= each_location.name %>",
-                              "<%=each_location.hstart%>", "<%=each_location.hend%>", "<%=converted_ratings%>");
+                              "<%=converted_start%>", "<%=converted_end%>", "<%=converted_ratings%>");
                   </script>
                 <% end %>
               <% end %>
             <% else %>
               <script type="text/javascript">
                 placeMarker(<%= each_location.latitude %>, <%=each_location.longitude %>, "<%= each_location.name %>",
-                          "<%=each_location.hstart%>", "<%=each_location.hend%>", "<%=converted_ratings%>");
+                          "<%=converted_start%>", "<%=converted_end%>", "<%=converted_ratings%>");
               </script>
             <% end %>
           <% end %>
