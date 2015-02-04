@@ -10,7 +10,7 @@
           <%= label_tag 'When are you going out?' %>
           <%= time_field_tag :user_time, ("#{Time.now.strftime("%H:%M")}") %>
         <% end %>
-        <% ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'].each do |dow| %>
+        <% ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'].each do |dow| %>
           <% if user_date == dow %>
             <%= label_tag dow %>
             <%= radio_button_tag(:day, dow, checked = true) %>

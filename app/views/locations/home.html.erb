@@ -23,10 +23,12 @@
             <% converted_ratings = each_location.convert %>
             <% if user_time %>
               <% if user_time > each_location.hstart.strftime("%H:%M") && user_time < each_location.hend.strftime("%H:%M") %>
-                <script type="text/javascript">
-                  placeMarker(<%= each_location.latitude %>, <%=each_location.longitude %>, "<%= each_location.name %>",
-                            "<%=each_location.hstart%>", "<%=each_location.hend%>", "<%=converted_ratings%>");
-                </script>
+                <% if each_location.send(user_date) %>
+                  <script type="text/javascript">
+                    placeMarker(<%= each_location.latitude %>, <%=each_location.longitude %>, "<%= each_location.name %>",
+                              "<%=each_location.hstart%>", "<%=each_location.hend%>", "<%=converted_ratings%>");
+                  </script>
+                <% end %>
               <% end %>
             <% else %>
               <script type="text/javascript">
