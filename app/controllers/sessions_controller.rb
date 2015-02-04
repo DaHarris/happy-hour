@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
     # Remove the user id from the session
     flash[:notice] = "You have successfully logged out."
     session[:user_id] = nil
-    redirect_to root_url
+    redirect_to destroy_time_path
   end
 
 end

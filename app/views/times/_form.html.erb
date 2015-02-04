@@ -1,0 +1,29 @@
+<%= form_tag times_path do %>
+  <div class="form-horizontal">
+    <div class="form-group">
+      <div class="field">
+        <div class="col-md-1"></div>
+        <% if user_time %>
+          <%= label_tag 'When are you going out?'%>
+          <%= time_field_tag :user_time, (user_time or Time.now.strftime("%H%M")) %>
+        <% else %>
+          <%= label_tag 'When are you going out?' %>
+          <%= time_field_tag :user_time, ("#{Time.now.strftime("%H:%M")}") %>
+        <% end %>
+        <% ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'].each do |dow| %>
+          <% if user_date == dow %>
+            <%= label_tag dow %>
+            <%= radio_button_tag(:day, dow, checked = true) %>
+          <% elsif !user_date && Time.now.strftime("%A") == dow %>
+            <%= label_tag dow %>
+            <%= radio_button_tag(:day, dow, checked = true) %>
+          <% else %>
+            <%= label_tag dow %>
+            <%= radio_button_tag(:day, dow) %>
+          <% end %>
+        <% end %>
+        <%= submit_tag %>
+      </div>
+    </div>
+  </div>
+<% end %>

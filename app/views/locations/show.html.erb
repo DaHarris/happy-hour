@@ -34,12 +34,12 @@
 
 <p>
   <strong>Hstart:</strong>
-  <%= @location.hstart %>
+  <%= @location.hstart.strftime("%H:%M") %>
 </p>
 
 <p>
   <strong>Hend:</strong>
-  <%= @location.hend %>
+  <%= @location.hend.strftime("%H:%M") %>
 </p>
 
 <p>
@@ -47,10 +47,6 @@
   <%= @location.hmenu %>
 </p>
 
-<p>
-  <strong>Rating Count:</strong>
-  <%= @location.hcounter %>
-</p>
 
 <p>
   <strong>Ratings:</strong>

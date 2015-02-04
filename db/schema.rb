@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150203161702) do
+ActiveRecord::Schema.define(version: 20150204175701) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,8 +22,6 @@ ActiveRecord::Schema.define(version: 20150203161702) do
     t.float    "longitude"
     t.float    "latitude"
     t.boolean  "gmaps"
-    t.float    "hstart"
-    t.float    "hend"
     t.string   "hmenu"
     t.float    "hrating",    default: 0.0
     t.string   "number"
@@ -38,6 +36,8 @@ ActiveRecord::Schema.define(version: 20150203161702) do
     t.boolean  "friday",     default: false
     t.boolean  "saturday",   default: false
     t.integer  "hcounter",   default: 0
+    t.time     "hend"
+    t.time     "hstart"
   end
 
   create_table "ratings", force: :cascade do |t|

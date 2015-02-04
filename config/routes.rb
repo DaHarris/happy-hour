@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   end
   resources :users
   resources :sessions
+  resources :times
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -18,7 +19,7 @@ Rails.application.routes.draw do
   get 'register' => 'users#register'
   get 'log_in' => 'sessions#new', :as => 'log_in'
   get 'logout' => 'sessions#destroy'
-  
+  get 'destroy_time' => 'times#destroy'
 
 
 

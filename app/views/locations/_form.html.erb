@@ -23,28 +23,22 @@
       <div class="form-ctonrols col-md-4"><%= f.text_field :address %></div>
     </div>
   </div>
-  <!-- <div class="form-group">
-    <div class="field">
-      <div class="control-label col-md-2"><%= f.label :longitude %><br></div>
-      <div class="form-ctonrols col-md-4"><%= f.text_field :longitude %></div>
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="field">
-      <div class="control-label col-md-2"><%= f.label :latitude %><br></div>
-      <div class="form-ctonrols col-md-4"><%= f.text_field :latitude %></div>
-    </div>
-  </div> -->
   <div class="form-group">
     <div class="field">
       <div class="control-label col-md-2"><%= f.label 'HappyHour start' %><br></div>
-      <div class="form-ctonrols col-md-4"><%= f.text_field :hstart %></div>
+      <div class="form-ctonrols col-md-4"><%= f.time_field :hstart %></div>
     </div>
   </div>
   <div class="form-group">
     <div class="field">
       <div class="control-label col-md-2"><%= f.label 'HappyHour end' %><br></div>
-      <div class="form-ctonrols col-md-4"><%= f.text_field :hend %></div>
+      <div class="form-ctonrols col-md-4"><%= f.time_field :hend %></div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="field">
+      <div class="control-label col-md-2"><%= f.label 'HappyHour Menu' %><br></div>
+      <div class="form-controls col-md-4"><%= f.text_field :hmenu, :cols => "10", :rows => "10" %></div>
     </div>
   </div>
   <div class="form-group">
