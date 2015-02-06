@@ -20,7 +20,7 @@ class Location < ActiveRecord::Base
     end
     average = rating_array.inject{ |sum, el| sum + el }.to_f / rating_array.size
 
-    if average < 3
+    if average < 3.25
       'icons.bad.icon'
     elsif average < 4
       'icons.average.icon'
