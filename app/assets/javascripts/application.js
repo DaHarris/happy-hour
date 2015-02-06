@@ -32,14 +32,14 @@ function mapBuilder() {
   });
 }
 
-function placeMarker(lats, longs, name, start, end, rating) {
+function placeMarker(lats, longs, name, start, end, rating, menu) {
     var marker = new google.maps.Marker({
     position: {lat: lats, lng: longs},
     icon: eval(rating),
     map: handler.getMap()
   });
 
-  var contentString = name + '<br>HappyHour start: ' + start + '<br>HappyHour end: ' + end;
+  var contentString = name + '<br>HappyHour start: ' + start + '<br>HappyHour end: ' + end + "<br>Menu: " +  menu.link(menu);
 
   var infowindow = new google.maps.InfoWindow({
     content: contentString

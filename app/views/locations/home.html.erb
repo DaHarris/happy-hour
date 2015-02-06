@@ -28,14 +28,14 @@
                 <% if each_location.send(user_date) %>
                   <script type="text/javascript">
                     placeMarker(<%= each_location.latitude %>, <%=each_location.longitude %>, "<%= each_location.name %>",
-                              "<%=converted_start%>", "<%=converted_end%>", "<%=converted_ratings%>");
+                              "<%=converted_start%>", "<%=converted_end%>", "<%=converted_ratings%>", "<%=each_location.hmenu%>");
                   </script>
                 <% end %>
               <% end %>
             <% else %>
               <script type="text/javascript">
                 placeMarker(<%= each_location.latitude %>, <%=each_location.longitude %>, "<%= each_location.name %>",
-                          "<%=converted_start%>", "<%=converted_end%>", "<%=converted_ratings%>");
+                          "<%=converted_start%>", "<%=converted_end%>", "<%=converted_ratings%>", "<%=each_location.hmenu%>");
               </script>
             <% end %>
           <% end %>
